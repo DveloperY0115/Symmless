@@ -51,6 +51,21 @@ namespace BLAS {
         //! Default destructor.
         ~Vector() = default;
 
+        //! Copy assignment operator.
+        Vector& operator=(const Vector& v);
+
+        //! Move assignment operator.
+        Vector& operator=(const Vector&& v) noexcept;
+
+        //! Set all x,y, z components to \p s.
+        void Set(T s);
+
+        //! Set x, y, z components to each given values.
+        void Set(T x, T y, T z);
+
+        //!
+
+
     private:
         T _x;
         T _y;

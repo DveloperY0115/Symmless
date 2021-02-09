@@ -15,5 +15,26 @@ namespace BLAS {
         Set(list);
     }
 
+    template<typename T>
+    Vector<T, 3>& Vector<T, 3>::operator=(const Vector& v) {
+        Set(v);
+        return (*this);
+    }
+
+    template <typename T>
+    void Vector<T, 3>::Set(T s) {
+        this->_x = s;
+        this->_y = s;
+        this->_z = s;
+    }
+
+    template <typename T>
+    void Vector<T, 3>::Set(T x, T y, T z) {
+        this->_x = x;
+        this->_y = y;
+        this->_z = z;
+    }
+
+}
 
 #endif //BLAS_VECTOR3_IMPL_HPP

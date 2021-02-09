@@ -46,4 +46,11 @@ namespace BLAS {
         this->_z = static_cast<T>(*(++first_elem));
     }
 
+    template<typename T>
+    void Vector<T, 3>::Set(const Vector &v) {
+        this->_x = v._x;
+        this->_y = v._y;
+        this->_z = v._z;
+    }
+
 #endif //BLAS_VECTOR3_IMPL_HPP

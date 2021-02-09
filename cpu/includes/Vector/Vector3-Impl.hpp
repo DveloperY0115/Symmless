@@ -53,4 +53,11 @@ namespace BLAS {
         this->_z = v._z;
     }
 
+    template<typename T>
+    void Vector<T, 3>::SetZero() {
+        this->_x = static_cast<T>(0);
+        this->_y = static_cast<T>(0);
+        this->_z = static_cast<T>(0);
+    }
+
 #endif //BLAS_VECTOR3_IMPL_HPP

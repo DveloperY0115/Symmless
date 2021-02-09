@@ -35,6 +35,15 @@ namespace BLAS {
         this->_z = z;
     }
 
-}
+    template <typename T>
+    template <typename U>
+    void Vector<T, 3>::Set(const std::initializer_list<U>& list) {
+        assert(list.size() >= 3);
+
+        auto first_elem = list.begin();
+        this->_x = static_cast<T>(*first_elem);
+        this->_y = static_cast<T>(*(++first_elem));
+        this->_z = static_cast<T>(*(++first_elem));
+    }
 
 #endif //BLAS_VECTOR3_IMPL_HPP

@@ -77,6 +77,7 @@ namespace BLAS {
         void Normalize();
 
 
+    public:
         T _x;
         T _y;
         T _z;

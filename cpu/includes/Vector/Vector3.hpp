@@ -73,6 +73,10 @@ namespace BLAS {
         //! Set x, y, z to zero.
         void SetZero();
 
+        //! Normalize this vector.
+        void Normalize();
+
+
         T _x;
         T _y;
         T _z;

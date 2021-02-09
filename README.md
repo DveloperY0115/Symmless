@@ -1,3 +1,3 @@
 # BLAS
 
-C++ basic linear algebra subprogram for various usages. This project is built on C++ 14 and aiming for CUDA support. 
+Basic linear algebra subprogram(BLAS) for various usages. This project is built on C++ 14 and aiming for CUDA support. 

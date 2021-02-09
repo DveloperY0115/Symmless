@@ -60,13 +60,19 @@ namespace BLAS {
         //! Set all x,y, z components to \p s.
         void Set(T s);
 
-        //! Set x, y, z components to each given values.
+        //! Set x, y, z components with each given values.
         void Set(T x, T y, T z);
 
-        //!
+        //! Set x, y, z components with given initializer list.
+        template <typename U>
+        void Set(const std::initializer_list<U>& list);
 
+        //! Set x, y, z components with elements of given vector \p v.
+        void Set(const Vector& v);
 
-    private:
+        //! Set x, y, z to zero.
+        void SetZero();
+
         T _x;
         T _y;
         T _z;

@@ -41,8 +41,10 @@ jobs:
       run: cmake --build . --config $BUILD_TYPE
     
   test:
-    
     runs-on: ubuntu-latest
+    
+    # Testing must be done after building the project
+    needs: build
     
     steps:
       - name: Run Unit-tests on CPU

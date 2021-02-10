@@ -60,4 +60,10 @@ namespace BLAS {
         this->_z = static_cast<T>(0);
     }
 
+    template <typename T>
+    float Vector<T, 3>::Length() {
+        return static_cast<float>(std::sqrt(_x * _x + _y * _y + _z * _z));
+    }
+}
+
 #endif //BLAS_VECTOR3_IMPL_HPP

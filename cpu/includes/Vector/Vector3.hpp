@@ -77,6 +77,8 @@ namespace BLAS {
         //! Normalize this vector.
         void Normalize();
 
+        //! Calculate L2 norm of this vector
+        float Length();
 
     public:
         T _x;

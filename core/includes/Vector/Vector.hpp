@@ -22,17 +22,21 @@ namespace Symmless {
         static_assert(std::is_floating_point<T>::value,
                 "Vector only can be instantiated with floating point types.");
 
-        //! Constructs a vector of length \p filled with zeros.
-        constexpr Vector();
+        using ContainerType = std::array<T, N>;
 
+        //! Constructs a vector filled with zeros.
+        Vector();
+
+        //! Constructs a vector with multiple parameters.
         template <typename... Params>
         explicit Vector(Params... params);
 
+        //! Constructs a vector with initializer list.
         template <typename U>
-        explicit Vector(const std::initializer_list<U>& list);
+        Vector(const std::initializer_list<U>& list);
 
         //! Copy constructor.
-        constexpr Vector(Vector& v);
+        Vector(Vector& v);
 
 
     private:

@@ -38,6 +38,10 @@ namespace Symmless {
         //! Copy constructor.
         Vector(Vector& v);
 
+        //! Copy asssignment operator.
+        Vector& operator=(const Vector& v);
+
+
 
     private:
         std::array<T, N> _elements;

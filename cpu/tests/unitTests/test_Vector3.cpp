@@ -34,7 +34,31 @@ TEST(Vector3, Constructors) {
 
     //! Move constructor
 }
+
+TEST(Vector3, Setters) {
+    Vector<float, 3> vec = Vector<float, 3>(3.0f, 2.0f, -1.0f);
+
+    //! Set all components to zero
+    vec.SetZero();
     EXPECT_FLOAT_EQ(0.0f, vec._x);
     EXPECT_FLOAT_EQ(0.0f, vec._y);
     EXPECT_FLOAT_EQ(0.0f, vec._z);
+
+    //! Set all components to 1.0
+    vec.Set(1.0f);
+    EXPECT_FLOAT_EQ(1.0f, vec._x);
+    EXPECT_FLOAT_EQ(1.0f, vec._y);
+    EXPECT_FLOAT_EQ(1.0f, vec._z);
+
+    //! Set components with different given values
+    vec.Set(4.0f, -5.0f, 1.0f);
+    EXPECT_FLOAT_EQ(4.0f, vec._x);
+    EXPECT_FLOAT_EQ(-5.0f, vec._y);
+    EXPECT_FLOAT_EQ(1.0f, vec._z);
+
+    //! Set components with initializer list
+    vec.Set({ 3.0f, 2.0f, -1.0f });
+    EXPECT_FLOAT_EQ(3.0f, vec._x);
+    EXPECT_FLOAT_EQ(2.0f, vec._y);
+    EXPECT_FLOAT_EQ(-1.0f, vec._z);
 }

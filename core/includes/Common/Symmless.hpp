@@ -12,5 +12,7 @@ namespace Symmless {
 #else
 #define SYMMLESS_HOST_DEVICE inline
 #endif
+
+
 }
 #endif //SYMMLESS_SYMMLESS_HPP 

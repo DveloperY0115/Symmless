@@ -1,23 +1,24 @@
 #ifndef SYMMLESS_VECTOR3_IMPL_HPP
 #define SYMMLESS_VECTOR3_IMPL_HPP
 
-#include "Vector3.hpp"
-
 namespace Symmless {
 
     template<typename T>
     template<typename U>
+    SYMMLESS_HOST_DEVICE
     Vector<T, 3>::Vector(const std::initializer_list<U>& list) {
         Set(list);
     }
 
     template<typename T>
+    SYMMLESS_HOST_DEVICE
     Vector<T, 3>& Vector<T, 3>::operator=(const Vector& v) {
         Set(v);
         return (*this);
     }
 
     template <typename T>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Set(T s) {
         _x = s;
         _y = s;
@@ -25,6 +26,7 @@ namespace Symmless {
     }
 
     template <typename T>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Set(T x, T y, T z) {
         _x = x;
         _y = y;
@@ -33,6 +35,7 @@ namespace Symmless {
 
     template <typename T>
     template <typename U>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Set(const std::initializer_list<U>& list) {
         assert(list.size() >= 3);
 
@@ -43,6 +46,7 @@ namespace Symmless {
     }
 
     template<typename T>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Set(const Vector &v) {
         _x = v._x;
         _y = v._y;
@@ -50,6 +54,7 @@ namespace Symmless {
     }
 
     template<typename T>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::SetZero() {
         _x = static_cast<T>(0);
         _y = static_cast<T>(0);
@@ -57,6 +62,7 @@ namespace Symmless {
     }
 
     template<typename T>
+    SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Normalize() {
         float length_reversed = 1 / Length();
         _x *= length_reversed;
@@ -65,6 +71,7 @@ namespace Symmless {
     }
 
     template <typename T>
+    SYMMLESS_HOST_DEVICE
     float Vector<T, 3>::Length() {
         return static_cast<float>(std::sqrt(_x * _x + _y * _y + _z * _z));
     }

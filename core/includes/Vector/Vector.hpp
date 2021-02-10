@@ -1,6 +1,7 @@
 #ifndef SYMMLESS_VECTOR_HPP
 #define SYMMLESS_VECTOR_HPP
 
+#include "Common/Symmless.hpp"
 #include <cstddef>
 #include <array>
 #include <type_traits>
@@ -25,20 +26,25 @@ namespace Symmless {
         using ContainerType = std::array<T, N>;
 
         //! Constructs a vector filled with zeros.
+        SYMMLESS_HOST_DEVICE 
         Vector();
 
         //! Constructs a vector with multiple parameters.
         template <typename... Params>
+        SYMMLESS_HOST_DEVICE 
         explicit Vector(Params... params);
 
         //! Constructs a vector with initializer list.
         template <typename U>
+        SYMMLESS_HOST_DEVICE 
         Vector(const std::initializer_list<U>& list);
 
         //! Copy constructor.
+        SYMMLESS_HOST_DEVICE 
         Vector(Vector& v);
 
         //! Copy asssignment operator.
+        SYMMLESS_HOST_DEVICE
         Vector& operator=(const Vector& v);
 
 

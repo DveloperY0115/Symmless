@@ -73,7 +73,7 @@ TEST(Vector3, Setters) {
     EXPECT_FLOAT_EQ(0.0f, vec._z);
 }
 
-TEST(Vector3, BasiscOps) {
+TEST(Vector3, AssignmentOps) {
     Vector<float, 3> vec1 = Vector<float, 3>();
     Vector<float, 3> vec2 = Vector<float, 3>({ 1.0f, 1.0f, 2.0f });
 
@@ -93,14 +93,36 @@ TEST(Vector3, BasiscOps) {
 
     //! Check move assignment operator
 
+}
+
+TEST(Vector3, LengthAndNormalize) {
+    Vector<float, 3> vec = Vector<float, 3>({ 1.0f, 1.0f, 2.0f });
+
     //! Check length function
-    float vec2_norm = vec2.Length();
-    EXPECT_FLOAT_EQ(std::sqrt(1.0f * 1.0f + 1.0f * 1.0f + 2.0f * 2.0f), 
-                    vec2_norm);
+    float vec_norm = vec.Length();
+    EXPECT_FLOAT_EQ(std::sqrt(1.0f * 1.0f + 1.0f * 1.0f + 2.0f * 2.0f),
+                    vec_norm);
 
     //! Check normalization function
-    vec2.Normalize();
-    EXPECT_FLOAT_EQ(1.0f / vec2_norm, vec2._x);
-    EXPECT_FLOAT_EQ(1.0f / vec2_norm, vec2._y);
-    EXPECT_FLOAT_EQ(2.0f / vec2_norm, vec2._z);
+    vec.Normalize();
+    EXPECT_FLOAT_EQ(1.0f / vec_norm, vec._x);
+    EXPECT_FLOAT_EQ(1.0f / vec_norm, vec._y);
+    EXPECT_FLOAT_EQ(2.0f / vec_norm, vec._z);
+}
+
+TEST(Vector3, AlgebraicOps) {
+    Vector<float, 3> vec = Vector<float, 3>({ 1.0f, 1.0f, 1.0f });
+    EXPECT_FLOAT_EQ(1.0f, vec._x);
+    EXPECT_FLOAT_EQ(1.0f, vec._y);
+    EXPECT_FLOAT_EQ(1.0f, vec._z);
+
+    Vector<float, 3> vec_add_const = vec.Add(3.0f);
+    EXPECT_FLOAT_EQ(4.0f, vec_add_const._x);
+    EXPECT_FLOAT_EQ(4.0f, vec_add_const._y);
+    EXPECT_FLOAT_EQ(4.0f, vec_add_const._z);
+
+    Vector<float, 3> vec_add_vec = vec.Add(Vector<float, 3>(1.0f, 2.0f, 3.0f));
+    EXPECT_FLOAT_EQ(2.0f, vec_add_vec._x);
+    EXPECT_FLOAT_EQ(3.0f, vec_add_vec._y);
+    EXPECT_FLOAT_EQ(4.0f, vec_add_vec._z);
 }

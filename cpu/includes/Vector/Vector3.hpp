@@ -1,6 +1,7 @@
 #ifndef BLAS_VECTOR3_HPP
 #define BLAS_VECTOR3_HPP
 
+#include <cmath>
 #include <limits>
 #include <type_traits>
 

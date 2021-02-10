@@ -1,5 +1,0 @@
-set(CMAKE_CXX_STANDARD 14)
-
-if (MSVC)
-    set(CMAKE_CUDA_STANDARD 14)
-endif()

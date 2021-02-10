@@ -1,7 +1,3 @@
-//
-// Created by 유승우 on 2021/02/09.
-//
-
 #ifndef BLAS_VECTOR_HPP
 #define BLAS_VECTOR_HPP
 
@@ -37,9 +33,6 @@ namespace BLAS {
 
         //! Copy constructor.
         constexpr Vector(Vector& v);
-
-
-
 
 
     private:

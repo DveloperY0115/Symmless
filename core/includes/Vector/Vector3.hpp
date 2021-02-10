@@ -95,7 +95,12 @@ namespace Symmless {
         SYMMLESS_HOST_DEVICE
         void Normalize();
 
-        
+        //! Element-wise scalar addition
+        SYMMLESS_HOST_DEVICE
+        Vector Add(T v) const;
+
+        //! Vector addition
+        Vector Add(const Vector& v) const;
 
     public:
         T _x;

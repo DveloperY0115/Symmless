@@ -40,14 +40,7 @@ jobs:
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build . --config $BUILD_TYPE
     
-  test:
-    runs-on: ubuntu-latest
-    
-    # Testing must be done after building the project
-    needs: build
-    
-    steps:
-      - name: Run Unit-tests on CPU
-        working-directory: ${{github.workspace}}/build
-        shell: bash
-        run: ./cpu/tests/unitTests/UnitTests
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      run: ./cpu/tests/unitTests/UnitTests

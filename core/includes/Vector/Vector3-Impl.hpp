@@ -61,6 +61,12 @@ namespace Symmless {
         _z = static_cast<T>(0);
     }
 
+    template <typename T>
+    SYMMLESS_HOST_DEVICE
+        float Vector<T, 3>::Length() {
+        return static_cast<float>(std::sqrt(_x * _x + _y * _y + _z * _z));
+    }
+
     template<typename T>
     SYMMLESS_HOST_DEVICE
     void Vector<T, 3>::Normalize() {
@@ -68,12 +74,6 @@ namespace Symmless {
         _x *= length_reversed;
         _y *= length_reversed;
         _z *= length_reversed;
-    }
-
-    template <typename T>
-    SYMMLESS_HOST_DEVICE
-    float Vector<T, 3>::Length() {
-        return static_cast<float>(std::sqrt(_x * _x + _y * _y + _z * _z));
     }
 }
 

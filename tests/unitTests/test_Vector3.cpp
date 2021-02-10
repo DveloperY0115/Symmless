@@ -62,3 +62,35 @@ TEST(Vector3, Setters) {
     EXPECT_FLOAT_EQ(2.0f, vec._y);
     EXPECT_FLOAT_EQ(-1.0f, vec._z);
 }
+
+TEST(Vector3, BasiscOps) {
+    Vector<float, 3> vec1 = Vector<float, 3>();
+    Vector<float, 3> vec2 = Vector<float, 3>({ 1.0f, 1.0f, 2.0f });
+
+    EXPECT_FLOAT_EQ(0.0f, vec1._x);
+    EXPECT_FLOAT_EQ(0.0f, vec1._y);
+    EXPECT_FLOAT_EQ(0.0f, vec1._z);
+
+    EXPECT_FLOAT_EQ(1.0f, vec2._x);
+    EXPECT_FLOAT_EQ(1.0f, vec2._y);
+    EXPECT_FLOAT_EQ(2.0f, vec2._z);
+
+    //! Check copy assignment operator
+    vec1 = vec2;
+    EXPECT_FLOAT_EQ(1.0f, vec1._x);
+    EXPECT_FLOAT_EQ(1.0f, vec1._y);
+    EXPECT_FLOAT_EQ(2.0f, vec1._z);
+
+    //! Check move assignment operator
+
+    //! Check length function
+    float vec2_norm = vec2.Length();
+    EXPECT_FLOAT_EQ(std::sqrt(1.0f * 1.0f + 1.0f * 1.0f + 2.0f * 2.0f), 
+                    vec2_norm);
+
+    //! Check normalization function
+    vec2.Normalize();
+    EXPECT_FLOAT_EQ(1.0f / vec2_norm, vec2._x);
+    EXPECT_FLOAT_EQ(1.0f / vec2_norm, vec2._y);
+    EXPECT_FLOAT_EQ(2.0f / vec2_norm, vec2._z);
+}

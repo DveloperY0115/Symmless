@@ -87,13 +87,15 @@ namespace Symmless {
         SYMMLESS_HOST_DEVICE
         void SetZero();
 
+        //! Calculate L2 norm of this vector
+        SYMMLESS_HOST_DEVICE
+        float Length();
+
         //! Normalize this vector.
         SYMMLESS_HOST_DEVICE
         void Normalize();
 
-        //! Calculate L2 norm of this vector
-        SYMMLESS_HOST_DEVICE
-        float Length();
+        
 
     public:
         T _x;

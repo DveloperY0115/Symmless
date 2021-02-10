@@ -1,5 +1,9 @@
 # Build
 cmake-build-debug
+out
 
 # Jetbrains
 .idea
+
+# Visual Studio Configs
+.vs

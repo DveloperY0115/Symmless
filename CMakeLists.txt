@@ -4,9 +4,11 @@ project(Symmless)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# googletest
 include_directories(libraries/googletest/googletest/include)
 include_directories(libraries/googletest/googlemock/include)
-
 add_subdirectory(libraries/googletest)
 
-add_subdirectory(core)
+include_directories(core/includes)
+
+add_subdirectory(tests)

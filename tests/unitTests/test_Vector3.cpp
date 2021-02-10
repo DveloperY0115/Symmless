@@ -37,6 +37,9 @@ TEST(Vector3, Constructors) {
 
 TEST(Vector3, Setters) {
     Vector<float, 3> vec = Vector<float, 3>(3.0f, 2.0f, -1.0f);
+    EXPECT_FLOAT_EQ(3.0f, vec._x);
+    EXPECT_FLOAT_EQ(2.0f, vec._y);
+    EXPECT_FLOAT_EQ(-1.0f, vec._z);
 
     //! Set all components to zero
     vec.SetZero();
@@ -61,6 +64,13 @@ TEST(Vector3, Setters) {
     EXPECT_FLOAT_EQ(3.0f, vec._x);
     EXPECT_FLOAT_EQ(2.0f, vec._y);
     EXPECT_FLOAT_EQ(-1.0f, vec._z);
+
+    //! Set components with other vector
+    Vector<float, 3> vec_other = Vector<float, 3>();
+    vec.Set(vec_other);
+    EXPECT_FLOAT_EQ(0.0f, vec._x);
+    EXPECT_FLOAT_EQ(0.0f, vec._y);
+    EXPECT_FLOAT_EQ(0.0f, vec._z);
 }
 
 TEST(Vector3, BasiscOps) {

@@ -23,16 +23,16 @@ namespace BLAS {
 
     template <typename T>
     void Vector<T, 3>::Set(T s) {
-        this->_x = s;
-        this->_y = s;
-        this->_z = s;
+        _x = s;
+        _y = s;
+        _z = s;
     }
 
     template <typename T>
     void Vector<T, 3>::Set(T x, T y, T z) {
-        this->_x = x;
-        this->_y = y;
-        this->_z = z;
+        _x = x;
+        _y = y;
+        _z = z;
     }
 
     template <typename T>
@@ -41,23 +41,25 @@ namespace BLAS {
         assert(list.size() >= 3);
 
         auto first_elem = list.begin();
-        this->_x = static_cast<T>(*first_elem);
-        this->_y = static_cast<T>(*(++first_elem));
-        this->_z = static_cast<T>(*(++first_elem));
+        _x = static_cast<T>(*first_elem);
+        _y = static_cast<T>(*(++first_elem));
+        _z = static_cast<T>(*(++first_elem));
     }
 
     template<typename T>
     void Vector<T, 3>::Set(const Vector &v) {
-        this->_x = v._x;
-        this->_y = v._y;
-        this->_z = v._z;
+        _x = v._x;
+        _y = v._y;
+        _z = v._z;
     }
 
     template<typename T>
     void Vector<T, 3>::SetZero() {
-        this->_x = static_cast<T>(0);
-        this->_y = static_cast<T>(0);
-        this->_z = static_cast<T>(0);
+        _x = static_cast<T>(0);
+        _y = static_cast<T>(0);
+        _z = static_cast<T>(0);
+    }
+
     template<typename T>
     void Vector<T, 3>::Normalize() {
         float length_reversed = 1 / Length();

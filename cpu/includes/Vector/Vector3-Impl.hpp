@@ -58,6 +58,12 @@ namespace BLAS {
         this->_x = static_cast<T>(0);
         this->_y = static_cast<T>(0);
         this->_z = static_cast<T>(0);
+    template<typename T>
+    void Vector<T, 3>::Normalize() {
+        float length_reversed = 1 / Length();
+        _x *= length_reversed;
+        _y *= length_reversed;
+        _z *= length_reversed;
     }
 
     template <typename T>

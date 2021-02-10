@@ -1,11 +1,11 @@
-#ifndef BLAS_VECTOR_HPP
-#define BLAS_VECTOR_HPP
+#ifndef SYMMLESS_VECTOR_HPP
+#define SYMMLESS_VECTOR_HPP
 
 #include <cstddef>
 #include <array>
 #include <type_traits>
 
-namespace BLAS {
+namespace Symmless {
     //!
     //! \brief Generalized vector class.
     //!
@@ -42,4 +42,4 @@ namespace BLAS {
 
 #include "Vector-Impl.hpp"
 
-#endif //BLAS_VECTOR_HPP
+#endif //SYMMLESS_VECTOR_HPP

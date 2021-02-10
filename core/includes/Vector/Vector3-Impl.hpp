@@ -1,9 +1,9 @@
-#ifndef BLAS_VECTOR3_IMPL_HPP
-#define BLAS_VECTOR3_IMPL_HPP
+#ifndef SYMMLESS_VECTOR3_IMPL_HPP
+#define SYMMLESS_VECTOR3_IMPL_HPP
 
 #include "Vector3.hpp"
 
-namespace BLAS {
+namespace Symmless {
 
     template<typename T>
     template<typename U>
@@ -70,4 +70,4 @@ namespace BLAS {
     }
 }
 
-#endif //BLAS_VECTOR3_IMPL_HPP
+#endif //SYMMLESS_VECTOR3_IMPL_HPP

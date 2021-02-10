@@ -1,5 +1,5 @@
-#ifndef BLAS_VECTOR3_HPP
-#define BLAS_VECTOR3_HPP
+#ifndef SYMMLESS_VECTOR3_HPP
+#define SYMMLESS_VECTOR3_HPP
 
 #include <cmath>
 #include <limits>
@@ -7,7 +7,7 @@
 
 #include "Vector.hpp"
 
-namespace BLAS {
+namespace Symmless {
     //!
     //! \brief 3D vector class.
     //!
@@ -90,4 +90,4 @@ namespace BLAS {
 
 #include "Vector3-Impl.hpp"
 
-#endif //BLAS_VECTOR3_HPP
+#endif //SYMMLESS_VECTOR3_HPP

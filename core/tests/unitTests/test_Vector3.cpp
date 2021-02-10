@@ -5,7 +5,7 @@
 #include "unitTest.hpp"
 #include "Vector/Vector3.hpp"
 
-using namespace BLAS;
+using namespace Symmless;
 
 TEST(Vector3, Constructors) {
     //! Default constructor

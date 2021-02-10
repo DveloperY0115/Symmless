@@ -43,4 +43,4 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: ./cpu/tests/unitTests/UnitTests
+      run: ./tests/unitTests/UnitTests

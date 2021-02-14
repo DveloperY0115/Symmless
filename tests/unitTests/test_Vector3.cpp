@@ -153,4 +153,14 @@ TEST(Vector3, AlgebraicOps) {
     EXPECT_FLOAT_EQ(1.0f, result_cross._x);
     EXPECT_FLOAT_EQ(-2.0f, result_cross._y);
     EXPECT_FLOAT_EQ(1.0f, result_cross._z);
+
+    Vector<float, 3> vec_rsub_const = vec.RSub(3.0f);
+    EXPECT_FLOAT_EQ(2.0f, vec_rsub_const._x);
+    EXPECT_FLOAT_EQ(2.0f, vec_rsub_const._y);
+    EXPECT_FLOAT_EQ(2.0f, vec_rsub_const._z);
+
+    Vector<float, 3> vec_rsub_vec = vec.RSub(Vector<float, 3>(2.0f, 3.0f, 4.0f));
+    EXPECT_FLOAT_EQ(1.0f, vec_rsub_vec._x);
+    EXPECT_FLOAT_EQ(2.0f, vec_rsub_vec._y);
+    EXPECT_FLOAT_EQ(3.0f, vec_rsub_vec._z);
 }

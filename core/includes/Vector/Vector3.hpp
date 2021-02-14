@@ -137,11 +137,11 @@ namespace Symmless {
 
         //! Right element-wise scalar subtraction
         SYMMLESS_HOST_DEVICE
-        Vector Rsub(T c) const;
+        Vector RSub(T c) const;
 
         //! Right element-wise vector subtraction
         SYMMLESS_HOST_DEVICE
-        Vector Rsub(const Vector& v) const;
+        Vector RSub(const Vector& v) const;
     public:
         T _x;
         T _y;

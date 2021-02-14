@@ -168,7 +168,7 @@ namespace Symmless {
 
     template <typename T>
     SYMMLESS_HOST_DEVICE
-    Vector<T, 3> Vector<T, 3>::Rsub(T c) const {
+    Vector<T, 3> Vector<T, 3>::RSub(T c) const {
         T x = c - this->_x;
         T y = c - this->_y;
         T z = c - this->_z;
@@ -177,7 +177,7 @@ namespace Symmless {
 
     template <typename T>
     SYMMLESS_HOST_DEVICE
-    Vector<T, 3> Vector<T, 3>::Rsub(const Vector &v) const {
+    Vector<T, 3> Vector<T, 3>::RSub(const Vector &v) const {
         T x = v._x - this->_x;
         T y = v._y - this->_y;
         T z = v._z - this->_z;

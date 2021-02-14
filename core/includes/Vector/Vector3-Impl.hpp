@@ -149,6 +149,11 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    T Vector<T, 3>::Dot(const Vector &v) const {
+        return static_cast<T>(this->_x * v._x + this->_y * v._y + this->_z * v._z);
+    }
 
 }
 

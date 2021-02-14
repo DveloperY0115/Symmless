@@ -111,6 +111,13 @@ namespace Symmless {
         SYMMLESS_HOST_DEVICE
         Vector Sub(const Vector& v) const;
 
+        //! Element-wise scalar multiplication
+        SYMMLESS_HOST_DEVICE
+        Vector Mul(T c) const;
+
+        //! Element-wise vector multiplication
+        SYMMLESS_HOST_DEVICE
+        Vector Mul(const Vector& v) const;
 
     public:
         T _x;

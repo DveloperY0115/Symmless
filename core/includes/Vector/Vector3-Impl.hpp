@@ -96,7 +96,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Sub(T c) const {
         T x = this->_x - c;
@@ -105,7 +105,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Sub(const Vector &v) const {
         T x = this->_x - v._x;
@@ -114,7 +114,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Mul(T c) const {
         T x = this->_x * c;
@@ -123,7 +123,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Mul(const Vector &v) const {
         T x = this->_x * v._x;
@@ -132,7 +132,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Div(T c) const {
         T c_reversed = 1 / c;
@@ -142,7 +142,7 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Div(const Vector &v) const {
         T x = this->_x * (1 / v._x);
@@ -151,18 +151,36 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     T Vector<T, 3>::Dot(const Vector &v) const {
         return static_cast<T>(this->_x * v._x + this->_y * v._y + this->_z * v._z);
     }
 
-    template<typename T>
+    template <typename T>
     SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Cross(const Vector &v) const {
         T x = this->_y * v._z - this->_z * v._y;
         T y = this->_z * v._x - this->_x * v._z;
         T z = this->_x * v._y - this->_y * v._x;
+        return Vector<T, 3>(x, y, z);
+    }
+
+    template <typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Rsub(T c) const {
+        T x = c - this->_x;
+        T y = c - this->_y;
+        T z = c - this->_z;
+        return Vector<T, 3>(x, y, z);
+    }
+
+    template <typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Rsub(const Vector &v) const {
+        T x = v._x - this->_x;
+        T y = v._y - this->_y;
+        T z = v._z - this->_z;
         return Vector<T, 3>(x, y, z);
     }
 }

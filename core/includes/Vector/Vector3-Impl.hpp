@@ -1,6 +1,8 @@
 #ifndef SYMMLESS_VECTOR3_IMPL_HPP
 #define SYMMLESS_VECTOR3_IMPL_HPP
 
+#include "Vector3.hpp"
+
 namespace Symmless {
 
     template<typename T>
@@ -155,6 +157,14 @@ namespace Symmless {
         return static_cast<T>(this->_x * v._x + this->_y * v._y + this->_z * v._z);
     }
 
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Cross(const Vector &v) const {
+        T x = this->_y * v._z - this->_z * v._y;
+        T y = this->_z * v._x - this->_x * v._z;
+        T z = this->_x * v._y - this->_y * v._x;
+        return Vector<T, 3>(x, y, z);
+    }
 }
 
 #endif //SYMMLESS_VECTOR3_IMPL_HPP

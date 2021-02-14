@@ -130,6 +130,10 @@ namespace Symmless {
         //! Dot product
         SYMMLESS_HOST_DEVICE
         T Dot(const Vector& v) const;
+
+        //! Cross product
+        SYMMLESS_HOST_DEVICE
+        Vector Cross(const Vector& v) const;
     public:
         T _x;
         T _y;

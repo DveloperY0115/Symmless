@@ -145,4 +145,8 @@ TEST(Vector3, AlgebraicOps) {
     EXPECT_FLOAT_EQ(3.0f, vec_mul_vec._x);
     EXPECT_FLOAT_EQ(4.0f, vec_mul_vec._y);
     EXPECT_FLOAT_EQ(5.0f, vec_mul_vec._z);
+
+    float result_dot = vec.Dot(Vector<float, 3>(2.0f, 3.0f, 4.0f));
+    EXPECT_FLOAT_EQ(9.0f, result_dot);
+
 }

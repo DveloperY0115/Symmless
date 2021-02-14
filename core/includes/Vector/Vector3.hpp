@@ -100,6 +100,7 @@ namespace Symmless {
         Vector Add(T v) const;
 
         //! Vector addition
+        SYMMLESS_HOST_DEVICE
         Vector Add(const Vector& v) const;
 
     public:

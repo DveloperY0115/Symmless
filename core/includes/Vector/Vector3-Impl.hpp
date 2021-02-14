@@ -77,6 +77,7 @@ namespace Symmless {
     }
 
     template <typename T>
+    SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Add(T c) const {
         T x = this->_x + c;
         T y = this->_y + c;
@@ -85,6 +86,7 @@ namespace Symmless {
     }
 
     template <typename T>
+    SYMMLESS_HOST_DEVICE
     Vector<T, 3> Vector<T, 3>::Add(const Vector& v) const {
         T x = this->_x + v._x;
         T y = this->_y + v._y;

@@ -97,7 +97,7 @@ namespace Symmless {
 
         //! Element-wise scalar addition
         SYMMLESS_HOST_DEVICE
-        Vector Add(T v) const;
+        Vector Add(T c) const;
 
         //! Vector addition
         SYMMLESS_HOST_DEVICE

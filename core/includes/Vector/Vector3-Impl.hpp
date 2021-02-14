@@ -93,6 +93,24 @@ namespace Symmless {
         T z = this->_z + v._z;
         return Vector<T, 3>(x, y, z);
     }
+
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Sub(T c) const {
+        T x = this->_x - c;
+        T y = this->_y - c;
+        T z = this->_z - c;
+        return Vector<T, 3>(x, y, z);
+    }
+
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Sub(const Vector &v) const {
+        T x = this->_x - v._x;
+        T y = this->_y - v._y;
+        T z = this->_z - v._z;
+        return Vector<T, 3>(x, y, z);
+    }
 }
 
 #endif //SYMMLESS_VECTOR3_IMPL_HPP

@@ -103,6 +103,15 @@ namespace Symmless {
         SYMMLESS_HOST_DEVICE
         Vector Add(const Vector& v) const;
 
+        //! Element-wise scalar subtraction
+        SYMMLESS_HOST_DEVICE
+        Vector Sub(T c) const;
+
+        //! Vector subtraction
+        SYMMLESS_HOST_DEVICE
+        Vector Sub(const Vector& v) const;
+
+
     public:
         T _x;
         T _y;

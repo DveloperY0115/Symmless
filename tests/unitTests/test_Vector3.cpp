@@ -149,4 +149,8 @@ TEST(Vector3, AlgebraicOps) {
     float result_dot = vec.Dot(Vector<float, 3>(2.0f, 3.0f, 4.0f));
     EXPECT_FLOAT_EQ(9.0f, result_dot);
 
+    Vector<float, 3> result_cross = vec.Cross(Vector<float, 3>(2.0f, 3.0f, 4.0f));
+    EXPECT_FLOAT_EQ(1.0f, result_cross._x);
+    EXPECT_FLOAT_EQ(-2.0f, result_cross._y);
+    EXPECT_FLOAT_EQ(1.0f, result_cross._z);
 }

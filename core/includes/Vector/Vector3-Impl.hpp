@@ -130,6 +130,25 @@ namespace Symmless {
         return Vector<T, 3>(x, y, z);
     }
 
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Div(T c) const {
+        T c_reversed = 1 / c;
+        T x = this->_x * c_reversed;
+        T y = this->_y * c_reversed;
+        T z = this->_z * c_reversed;
+        return Vector<T, 3>(x, y, z);
+    }
+
+    template<typename T>
+    SYMMLESS_HOST_DEVICE
+    Vector<T, 3> Vector<T, 3>::Div(const Vector &v) const {
+        T x = this->_x * (1 / v._x);
+        T y = this->_y * (1 / v._y);
+        T z = this->_z * (1 / v._z);
+        return Vector<T, 3>(x, y, z);
+    }
+
 
 }
 

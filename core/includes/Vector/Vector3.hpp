@@ -119,12 +119,18 @@ namespace Symmless {
         SYMMLESS_HOST_DEVICE
         Vector Mul(const Vector& v) const;
 
+        //! Element-wise scalar division
+        SYMMLESS_HOST_DEVICE
+        Vector Div(T c) const;
+
+        //! Element-wise vector division
+        SYMMLESS_HOST_DEVICE
+        Vector Div(const Vector& v) const;
     public:
         T _x;
         T _y;
         T _z;
     };
-
 }
 
 #include "Vector3-Impl.hpp"

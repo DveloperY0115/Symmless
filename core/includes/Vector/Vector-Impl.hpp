@@ -1,4 +1,8 @@
 #ifndef SYMMLESS_VECTOR_IMPL_HPP
 #define SYMMLESS_VECTOR_IMPL_HPP
 
+namespace Symmless {
+
+}
+
 #endif //SYMMLESS_VECTOR_IMPL_HPP

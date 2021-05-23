@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.17)
 project(Symmless)
 # project(Symmless CUDA)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # googletest
 include_directories(libraries/googletest/googletest/include)
